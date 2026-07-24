@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>XRT Systems — Repair tracking for industrial equipment</title>
+<meta name="description" content="XRT Systems tracks industrial assets out for repair — motors, pumps, PLCs, hydraulics — from the day they leave your floor to the day they come back in service.">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://xrtsystems.com/">
+<meta property="og:title" content="XRT Systems — Repair tracking for industrial equipment">
+<meta property="og:description" content="One shared record between the plant and the repair house, so nobody has to call and ask.">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23171B1F'/><text x='32' y='46' font-family='monospace' font-size='42' font-weight='bold' fill='%23F2A93B' text-anchor='middle'>X</text></svg>">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root{
+  --bg:#171B1F;
+  --line:#333C45;
+  --line-soft:#252C33;
+  --text:#DCE3E9;
+  --muted:#828D98;
+  --amber:#F2A93B;
+  --display:"Barlow Condensed","Oswald","Arial Narrow",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"Cascadia Mono",Menlo,Consolas,monospace;
+}
+*,*:before,*:after{box-sizing:border-box}
+html{background:var(--bg)}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:var(--mono);font-size:15px;line-height:1.6;
+  padding:34px 24px 44px;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto}
+
+.bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding-bottom:16px;border-bottom:1px solid var(--line)}
+.mark{font-family:var(--display);font-weight:700;letter-spacing:.15em;
+  font-size:21px;text-transform:uppercase}
+.mark span{color:var(--amber)}
+.tagline{margin-left:auto;font-size:11px;letter-spacing:.18em;
+  color:var(--muted);text-transform:uppercase}
+
+.hero{padding:56px 0 48px}
+.eyebrow{font-size:11px;letter-spacing:.22em;color:var(--amber);
+  text-transform:uppercase;margin:0 0 18px}
+h1{font-family:var(--display);font-weight:700;text-transform:uppercase;
+  font-size:clamp(38px,9.5vw,82px);line-height:.94;margin:0 0 24px}
+h1 em{font-style:normal;display:block;color:var(--amber)}
+.lede{max-width:52ch;margin:0 0 30px;color:var(--muted)}
+.lede b{color:var(--text);font-weight:500}
+.contact{display:inline-block;border:1px solid var(--line);padding:12px 20px;
+  color:var(--text);text-decoration:none;font-size:13px;letter-spacing:.06em;
+  transition:border-color .15s ease,color .15s ease}
+.contact:hover,.contact:focus-visible{border-color:var(--amber);color:var(--amber)}
+
+.sec{border-top:1px solid var(--line);padding-top:26px;margin-top:8px}
+.sechead{font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted);margin:0 0 22px}
+
+.track{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--line-soft);border:1px solid var(--line-soft)}
+.step{background:var(--bg);padding:15px 14px 17px}
+.num{font-size:10px;letter-spacing:.16em;color:var(--amber);display:block;margin-bottom:7px}
+.steplabel{font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;
+  font-size:17px;font-weight:600;line-height:1.15}
+.stepnote{font-size:11px;color:var(--muted);margin-top:5px;line-height:1.45}
+
+.sides{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+.side h3{font-family:var(--display);text-transform:uppercase;letter-spacing:.07em;
+  font-size:20px;font-weight:600;margin:0 0 10px}
+.side p{margin:0;color:var(--muted);font-size:14px}
+
+.colophon{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);
+  font-size:11px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;
+  display:flex;gap:18px;flex-wrap:wrap}
+
+@media (max-width:700px){
+  .track{grid-template-columns:repeat(2,1fr)}
+  .sides{grid-template-columns:1fr;gap:26px}
+  .hero{padding:38px 0 34px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <div class="bar">
+    <div class="mark">XRT<span>&nbsp;/&nbsp;</span>Systems</div>
+    <div class="tagline">Launching 2026</div>
+  </div>
+
+  <div class="hero">
+    <p class="eyebrow">Site under construction</p>
+    <h1>Know where<br>your equipment<em>actually is</em></h1>
+    <p class="lede">
+      XRT Systems tracks industrial assets out for repair — <b>motors, pumps, PLCs,
+      hydraulics</b> — from the day they leave your floor to the day they come back
+      in service. One shared record between the plant and the repair house, so nobody
+      has to call and ask.
+    </p>
+    <a class="contact" href="mailto:aszopa@xrtsystems.com">aszopa@xrtsystems.com &nbsp;→</a>
+  </div>
+
+  <div class="sec">
+    <p class="sechead">The repair lifecycle, tracked end to end</p>
+    <div class="track">
+      <div class="step"><span class="num">01</span>
+        <div class="steplabel">Requested</div>
+        <div class="stepnote">Unit logged with tag, fault and facility</div></div>
+      <div class="step"><span class="num">02</span>
+        <div class="steplabel">Approved</div>
+        <div class="stepnote">Routed for sign-off against your spend limits</div></div>
+      <div class="step"><span class="num">03</span>
+        <div class="steplabel">Shipped out</div>
+        <div class="stepnote">Receiving document printed, tracking recorded</div></div>
+      <div class="step"><span class="num">04</span>
+        <div class="steplabel">In repair</div>
+        <div class="stepnote">Work under way at the repair house</div></div>
+      <div class="step"><span class="num">05</span>
+        <div class="steplabel">Repaired</div>
+        <div class="stepnote">Work complete, unit ready to come back</div></div>
+      <div class="step"><span class="num">06</span>
+        <div class="steplabel">Shipped back</div>
+        <div class="stepnote">Return leg tracked to your dock</div></div>
+      <div class="step"><span class="num">07</span>
+        <div class="steplabel">Received</div>
+        <div class="stepnote">Unit confirmed back on site</div></div>
+      <div class="step"><span class="num">08</span>
+        <div class="steplabel">Closed</div>
+        <div class="stepnote">Closed out with the full transition history</div></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <p class="sechead">Built for both sides of the transaction</p>
+    <div class="sides">
+      <div class="side">
+        <h3>For plants and facilities</h3>
+        <p>See every unit that's out, how long it's been gone, and what it's costing
+        you — without chasing anyone for a status update. Approvals, spend limits and
+        repair history in one place.</p>
+      </div>
+      <div class="side">
+        <h3>For repair houses</h3>
+        <p>Incoming work arrives as a ticket with the unit details already filled in.
+        Post status and quotes once and your customer sees them. Fewer phone calls,
+        cleaner paper trail.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="colophon">
+    <span>XRT Systems LLC</span>
+    <span>Michigan, USA</span>
+  </div>
+
+</div>
+</body>
+</html>
