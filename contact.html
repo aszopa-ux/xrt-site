@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Contact — XRT Systems</title>
+<meta name="description" content="Get in touch with XRT Systems about repair tracking for your equipment.">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://xrtsystems.com/contact.html">
+<meta property="og:title" content="Contact — XRT Systems">
+<meta property="og:description" content="Tell us what you run and what breaks. We'll get back to you.">
+<meta name="twitter:card" content="summary">
+<meta name="robots" content="index,follow">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23171B1F'/><text x='32' y='46' font-family='monospace' font-size='42' font-weight='bold' fill='%23F2A93B' text-anchor='middle'>X</text></svg>">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root{
+  --bg:#171B1F;
+  --line:#333C45;
+  --line-soft:#252C33;
+  --text:#DCE3E9;
+  --muted:#828D98;
+  --amber:#F2A93B;
+  --err:#E2734B;
+  --display:"Barlow Condensed","Oswald","Arial Narrow",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"Cascadia Mono",Menlo,Consolas,monospace;
+}
+*,*:before,*:after{box-sizing:border-box}
+html{background:var(--bg)}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:var(--mono);font-size:15px;line-height:1.6;
+  padding:34px 24px 44px;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto}
+
+.bar{display:flex;align-items:flex-start;gap:14px;flex-wrap:wrap;
+  padding-bottom:16px;border-bottom:1px solid var(--line)}
+.markwrap{display:flex;flex-direction:column;gap:6px}
+.marklink{text-decoration:none;color:inherit;display:block}
+.mark{font-family:var(--display);font-weight:700;letter-spacing:.15em;
+  font-size:21px;text-transform:uppercase;line-height:1}
+.mark span{color:var(--amber)}
+.expand{font-family:var(--mono);font-size:10px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--muted);font-weight:400}
+.expand b{color:var(--amber);font-weight:500}
+.tagline{margin-left:auto;font-size:11px;letter-spacing:.18em;
+  color:var(--muted);text-transform:uppercase;align-self:flex-start;padding-top:4px}
+
+.hero{padding:56px 0 30px}
+.eyebrow{font-size:11px;letter-spacing:.22em;color:var(--amber);
+  text-transform:uppercase;margin:0 0 18px}
+h1{font-family:var(--display);font-weight:700;text-transform:uppercase;
+  font-size:clamp(38px,9.5vw,82px);line-height:.94;margin:0 0 24px}
+h1 em{font-style:normal;display:block;color:var(--amber)}
+.lede{max-width:52ch;margin:0 0 30px;color:var(--muted)}
+.lede b{color:var(--text);font-weight:500}
+
+.sec{border-top:1px solid var(--line);padding-top:26px;margin-top:8px}
+.sechead{font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted);margin:0 0 22px}
+
+/* ---- form ---- */
+.formwrap{max-width:620px}
+.field{margin-bottom:20px}
+.field label{display:block;font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.field label .req{color:var(--amber)}
+.field input,.field textarea{
+  width:100%;background:var(--line-soft);color:var(--text);
+  border:1px solid var(--line);border-radius:0;
+  font-family:var(--mono);font-size:14px;line-height:1.55;
+  padding:11px 13px;transition:border-color .15s ease;
+}
+.field textarea{min-height:132px;resize:vertical}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--amber)}
+.field input[aria-invalid="true"],.field textarea[aria-invalid="true"]{border-color:var(--err)}
+.field input::placeholder,.field textarea::placeholder{color:#5D6771}
+.fielderr{display:none;font-size:11px;letter-spacing:.06em;color:var(--err);margin-top:6px}
+.fielderr.on{display:block}
+
+/* honeypot: hidden from people, visible to naive bots */
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+.submit{display:inline-block;border:1px solid var(--line);padding:12px 20px;
+  background:transparent;color:var(--text);font-family:var(--mono);
+  text-decoration:none;font-size:13px;letter-spacing:.06em;cursor:pointer;
+  transition:border-color .15s ease,color .15s ease}
+.submit:hover:not(:disabled),.submit:focus-visible:not(:disabled){border-color:var(--amber);color:var(--amber)}
+.submit:disabled{opacity:.5;cursor:default}
+
+.formnote{font-size:11px;color:var(--muted);letter-spacing:.06em;margin:14px 0 0}
+
+.banner{border:1px solid var(--err);border-left-width:3px;padding:12px 15px;
+  font-size:13px;color:var(--text);margin-bottom:24px}
+.banner b{color:var(--err);font-weight:500}
+.banner[hidden]{display:none}
+
+.thanks{border-left:1px solid var(--amber);padding-left:18px;max-width:52ch}
+.thanks h2{font-family:var(--display);text-transform:uppercase;letter-spacing:.06em;
+  font-size:26px;font-weight:600;margin:0 0 10px}
+.thanks h2:focus{outline:none}
+.thanks p{margin:0 0 14px;color:var(--muted)}
+.backlink{display:inline-block;border:1px solid var(--line);padding:12px 20px;
+  color:var(--text);text-decoration:none;font-size:13px;letter-spacing:.06em;
+  transition:border-color .15s ease,color .15s ease}
+.backlink:hover,.backlink:focus-visible{border-color:var(--amber);color:var(--amber)}
+
+.colophon{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);
+  font-size:11px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;
+  display:flex;gap:18px;flex-wrap:wrap}
+.colophon a{color:var(--muted);text-decoration:none}
+.colophon a:hover,.colophon a:focus-visible{color:var(--amber)}
+
+@media (max-width:700px){
+  .hero{padding:38px 0 26px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <div class="bar">
+    <div class="markwrap">
+      <a class="marklink" href="index.html">
+        <div class="mark">XRT<span>&nbsp;/&nbsp;</span>Systems</div>
+      </a>
+      <div class="expand"><b>X</b>-Industry &middot; <b>R</b>epair &middot; <b>T</b>racking</div>
+    </div>
+    <div class="tagline">Launching 2026</div>
+  </div>
+
+  <div class="hero">
+    <p class="eyebrow">Contact</p>
+    <h1>Tell us what<em>breaks</em></h1>
+    <p class="lede">
+      What you run, what goes out for repair, and where it gets away from you today.
+      <b>We read every one of these</b> and reply from a real address.
+    </p>
+  </div>
+
+  <div class="sec">
+    <p class="sechead">Send us a note</p>
+
+    <div class="formwrap">
+      <div class="banner" id="banner" hidden role="alert"></div>
+
+      <form id="contactForm" novalidate>
+        <div class="field">
+          <label for="name">Name <span class="req">*</span></label>
+          <input id="name" name="name" type="text" autocomplete="name" maxlength="200" required>
+          <div class="fielderr" id="name-err"></div>
+        </div>
+
+        <div class="field">
+          <label for="email">Email <span class="req">*</span></label>
+          <input id="email" name="email" type="email" autocomplete="email" maxlength="320" required>
+          <div class="fielderr" id="email-err"></div>
+        </div>
+
+        <div class="field">
+          <label for="company">Company <span style="color:var(--muted)">(optional)</span></label>
+          <input id="company" name="company" type="text" autocomplete="organization" maxlength="200">
+          <div class="fielderr" id="company-err"></div>
+        </div>
+
+        <div class="field">
+          <label for="message">Message <span class="req">*</span></label>
+          <textarea id="message" name="message" maxlength="5000" required></textarea>
+          <div class="fielderr" id="message-err"></div>
+        </div>
+
+        <!-- Bots fill this in; people never see it. Submissions with it set are dropped. -->
+        <div class="hp" aria-hidden="true">
+          <label for="website">Do not fill this in</label>
+          <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+
+        <button class="submit" type="submit" id="submitBtn">Send message &nbsp;→</button>
+        <p class="formnote">We use this to reply to you. Nothing else.</p>
+      </form>
+
+      <div class="thanks" id="thanks" hidden>
+        <h2 tabindex="-1">Thanks — that's in.</h2>
+        <p>We've got your note and we'll get back to you at the address you gave us.</p>
+        <a class="backlink" href="index.html">&larr; &nbsp;Back to home</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="colophon">
+    <span>XRT Systems LLC</span>
+    <a href="index.html">Home</a>
+    <a href="mailto:contact@xrtsystems.com">contact@xrtsystems.com</a>
+  </div>
+
+</div>
+
+<script type="module">
+/* ============================================================
+   CONFIG — swap these for production values.
+   Current values are the SANDBOX backend.
+   ============================================================ */
+const CONFIG = {
+  graphqlEndpoint: "https://kclm5rietjbcfpmxykrexgl2pi.appsync-api.us-east-2.amazonaws.com/graphql",
+  region:          "us-east-2",
+  identityPoolId:  "us-east-2:6d17a84a-e428-4d88-a5ad-7ab633b735c9",
+};
+/* ========================= END CONFIG ====================== */
+
+const enc = new TextEncoder();
+const hex = (bytes) => [...bytes].map((b) => b.toString(16).padStart(2, "0")).join("");
+
+async function sha256Hex(str) {
+  return hex(new Uint8Array(await crypto.subtle.digest("SHA-256", enc.encode(str))));
+}
+
+async function hmac(key, data) {
+  const k = await crypto.subtle.importKey("raw", key, { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
+  return new Uint8Array(await crypto.subtle.sign("HMAC", k, enc.encode(data)));
+}
+
+/* ---- Cognito Identity: GetId + GetCredentialsForIdentity are public,
+        unsigned APIs, so guest credentials need no SDK. ---- */
+async function cognitoCall(target, body) {
+  const res = await fetch(`https://cognito-identity.${CONFIG.region}.amazonaws.com/`, {
+    method: "POST",
+    headers: {
+      "content-type": "application/x-amz-json-1.1",
+      "x-amz-target": `AWSCognitoIdentityService.${target}`,
+    },
+    body: JSON.stringify(body),
+  });
+  if (!res.ok) throw new Error(`Cognito ${target} failed (${res.status})`);
+  return res.json();
+}
+
+let cachedCreds = null;
+async function getGuestCredentials() {
+  // Reuse for the page session; refresh with 2 min of headroom.
+  if (cachedCreds && cachedCreds.Expiration * 1000 - Date.now() > 120000) return cachedCreds;
+  const { IdentityId } = await cognitoCall("GetId", { IdentityPoolId: CONFIG.identityPoolId });
+  const { Credentials } = await cognitoCall("GetCredentialsForIdentity", { IdentityId });
+  cachedCreds = Credentials;
+  return Credentials;
+}
+
+/* ---- SigV4-sign a POST to AppSync. The browser sets Host itself; we only
+        have to include it in the canonical request. ---- */
+async function signedGraphQL(payload, creds) {
+  const url = new URL(CONFIG.graphqlEndpoint);
+  const service = "appsync";
+  const amzDate = new Date().toISOString().replace(/[:-]|\.\d{3}/g, "");
+  const dateStamp = amzDate.slice(0, 8);
+  const body = JSON.stringify(payload);
+
+  const signedHeaders = "content-type;host;x-amz-date;x-amz-security-token";
+  const canonicalRequest = [
+    "POST",
+    url.pathname,
+    "",
+    `content-type:application/json\n` +
+      `host:${url.host}\n` +
+      `x-amz-date:${amzDate}\n` +
+      `x-amz-security-token:${creds.SessionToken}\n`,
+    signedHeaders,
+    await sha256Hex(body),
+  ].join("\n");
+
+  const scope = `${dateStamp}/${CONFIG.region}/${service}/aws4_request`;
+  const stringToSign = [
+    "AWS4-HMAC-SHA256",
+    amzDate,
+    scope,
+    await sha256Hex(canonicalRequest),
+  ].join("\n");
+
+  let key = enc.encode("AWS4" + creds.SecretKey);
+  for (const part of [dateStamp, CONFIG.region, service, "aws4_request"]) key = await hmac(key, part);
+  const signature = hex(await hmac(key, stringToSign));
+
+  return fetch(CONFIG.graphqlEndpoint, {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      "x-amz-date": amzDate,
+      "x-amz-security-token": creds.SessionToken,
+      "authorization":
+        `AWS4-HMAC-SHA256 Credential=${creds.AccessKeyId}/${scope}, ` +
+        `SignedHeaders=${signedHeaders}, Signature=${signature}`,
+    },
+    body,
+  });
+}
+
+const MUTATION = `mutation CreateContactSubmission($input: CreateContactSubmissionInput!) {
+  createContactSubmission(input: $input) { id }
+}`;
+
+async function submitLead(input) {
+  const creds = await getGuestCredentials();
+  const res = await signedGraphQL({ query: MUTATION, variables: { input } }, creds);
+  let json = null;
+  try { json = await res.json(); } catch { /* fall through to status check */ }
+  if (!res.ok) throw new Error(`Request failed (${res.status})`);
+  if (json && json.errors && json.errors.length) {
+    throw new Error(json.errors[0].message || "GraphQL error");
+  }
+  if (!json || !json.data || !json.data.createContactSubmission) {
+    throw new Error("Unexpected response from server");
+  }
+  return json.data.createContactSubmission;
+}
+
+/* ---- validation + UI ---- */
+// Mirrors what the AWSEmail scalar accepts server-side, so we fail fast
+// in the browser instead of round-tripping to get the same rejection.
+const EMAIL_RE = /^[^\s@]+@[^\s@.]+(\.[^\s@.]+)+$/;
+
+const form = document.getElementById("contactForm");
+const banner = document.getElementById("banner");
+const thanks = document.getElementById("thanks");
+const submitBtn = document.getElementById("submitBtn");
+
+function setFieldError(id, msg) {
+  const input = document.getElementById(id);
+  const errEl = document.getElementById(`${id}-err`);
+  if (msg) {
+    input.setAttribute("aria-invalid", "true");
+    input.setAttribute("aria-describedby", `${id}-err`);
+    errEl.textContent = msg;
+    errEl.classList.add("on");
+  } else {
+    input.removeAttribute("aria-invalid");
+    input.removeAttribute("aria-describedby");
+    errEl.textContent = "";
+    errEl.classList.remove("on");
+  }
+}
+
+function validate(values) {
+  const errors = {};
+  if (!values.name) errors.name = "Please tell us your name.";
+  if (!values.email) errors.email = "We need an email address to reply to.";
+  else if (!EMAIL_RE.test(values.email)) errors.email = "That doesn't look like a valid email address.";
+  if (!values.message) errors.message = "Please add a short message.";
+  return errors;
+}
+
+function readValues() {
+  const get = (id) => document.getElementById(id).value.trim();
+  return { name: get("name"), email: get("email"), company: get("company"), message: get("message") };
+}
+
+// Clear a field's error as soon as the visitor starts fixing it.
+for (const id of ["name", "email", "message"]) {
+  document.getElementById(id).addEventListener("input", () => setFieldError(id, null));
+}
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  banner.hidden = true;
+
+  const values = readValues();
+  const errors = validate(values);
+  for (const id of ["name", "email", "company", "message"]) setFieldError(id, errors[id] || null);
+  if (Object.keys(errors).length) {
+    document.getElementById(Object.keys(errors)[0]).focus();
+    return;
+  }
+
+  // Honeypot: silently show the success state without sending anything.
+  if (document.getElementById("website").value) {
+    form.hidden = true;
+    thanks.hidden = false;
+    return;
+  }
+
+  submitBtn.disabled = true;
+  const originalLabel = submitBtn.innerHTML;
+  submitBtn.textContent = "Sending…";
+
+  try {
+    const input = { name: values.name, email: values.email, message: values.message };
+    if (values.company) input.company = values.company;
+    await submitLead(input);
+    form.hidden = true;
+    thanks.hidden = false;
+    thanks.querySelector("h2").focus?.();
+  } catch (err) {
+    // Failure: keep everything the visitor typed so they can just hit send again.
+    banner.innerHTML =
+      "<b>That didn't go through.</b> Please try again in a moment — or email us directly at " +
+      '<a href="mailto:contact@xrtsystems.com" style="color:var(--amber)">contact@xrtsystems.com</a>.';
+    banner.hidden = false;
+    banner.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    console.error("Contact form submission failed:", err);
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = originalLabel;
+  }
+});
+</script>
+</body>
+</html>
