@@ -46,8 +46,15 @@ body{
 .expand{font-family:var(--mono);font-size:10px;letter-spacing:.18em;
   text-transform:uppercase;color:var(--muted);font-weight:400}
 .expand b{color:var(--amber);font-weight:500}
-.tagline{margin-left:auto;font-size:11px;letter-spacing:.18em;
-  color:var(--muted);text-transform:uppercase;align-self:flex-start;padding-top:4px}
+/* Right-hand header group. It owns the alignment that used to live on .tagline —
+   margin-left:auto (push right) and the cross-axis position — so the tagline and the
+   Log in button sit on one baseline instead of each aligning independently. */
+.barright{margin-left:auto;align-self:center;display:flex;align-items:center;gap:14px}
+.tagline{font-size:11px;letter-spacing:.18em;
+  color:var(--muted);text-transform:uppercase}
+/* Header-scale variant of .contact — same border, hover and focus treatment, just sized
+   down so it reads as a nav control rather than competing with the hero CTAs. */
+.login{padding:8px 16px;font-size:12px;white-space:nowrap}
 
 .hero{padding:56px 0 48px}
 .eyebrow{font-size:11px;letter-spacing:.22em;color:var(--amber);
@@ -91,6 +98,9 @@ h1 em{font-style:normal;display:block;color:var(--amber)}
   .track{grid-template-columns:repeat(2,1fr)}
   .sides{grid-template-columns:1fr;gap:26px}
   .hero{padding:38px 0 34px}
+  /* .bar already wraps; give the right group its own full-width line under the mark so
+     the tagline and the button aren't squeezed against each other on a phone. */
+  .barright{width:100%;margin-left:0;justify-content:space-between}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none !important}}
 </style>
@@ -104,7 +114,13 @@ h1 em{font-style:normal;display:block;color:var(--amber)}
       <div class="mark">XRT<span>&nbsp;/&nbsp;</span>Systems</div>
       <div class="expand"><b>X</b>-Industry &middot; <b>R</b>epair &middot; <b>T</b>racking</div>
     </div>
-    <div class="tagline">Launching 2026</div>
+    <div class="barright">
+      <div class="tagline">Launching 2026</div>
+      <!-- Real navigation to the app, so no target="_blank" — this is the same product,
+           not an external reference. Reuses .contact.primary so it inherits the amber
+           border, the hover transition and the :focus-visible state already defined. -->
+      <a class="contact primary login" href="https://app.xrtsystems.com">Log in &nbsp;&rarr;</a>
+    </div>
   </div>
 
   <div class="hero">

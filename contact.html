@@ -49,8 +49,18 @@ body{
 .expand{font-family:var(--mono);font-size:10px;letter-spacing:.18em;
   text-transform:uppercase;color:var(--muted);font-weight:400}
 .expand b{color:var(--amber);font-weight:500}
-.tagline{margin-left:auto;font-size:11px;letter-spacing:.18em;
-  color:var(--muted);text-transform:uppercase;align-self:flex-start;padding-top:4px}
+/* Right-hand header group. It owns the alignment that used to live on .tagline —
+   margin-left:auto (push right) and the cross-axis position — so the tagline and the
+   Log in button sit on one baseline instead of each aligning independently.
+   NOTE .marklink is nested INSIDE .markwrap, and .barright is a SIBLING of .markwrap,
+   so the two never interact — this page's header differs from index.html only in that
+   its logo is a link home. */
+.barright{margin-left:auto;align-self:center;display:flex;align-items:center;gap:14px}
+.tagline{font-size:11px;letter-spacing:.18em;
+  color:var(--muted);text-transform:uppercase}
+/* Header-scale variant of .contact — same border, hover and focus treatment, just sized
+   down so it reads as a nav control rather than competing with the page's own buttons. */
+.login{padding:8px 16px;font-size:12px;white-space:nowrap}
 
 .hero{padding:56px 0 30px}
 .eyebrow{font-size:11px;letter-spacing:.22em;color:var(--amber);
@@ -106,10 +116,17 @@ h1 em{font-style:normal;display:block;color:var(--amber)}
   font-size:26px;font-weight:600;margin:0 0 10px}
 .thanks h2:focus{outline:none}
 .thanks p{margin:0 0 14px;color:var(--muted)}
-.backlink{display:inline-block;border:1px solid var(--line);padding:12px 20px;
+/* .backlink and .contact are ONE treatment under two names. index.html calls this button
+   language `.contact`; this page grew its own `.backlink` with byte-identical declarations.
+   Aliased rather than duplicated so the header markup is IDENTICAL across both pages — a
+   two-file hand-maintained site is exactly where a header that only LOOKS the same drifts.
+   .primary is new here; index.html has it, this page never needed it until now. */
+.backlink,.contact{display:inline-block;border:1px solid var(--line);padding:12px 20px;
   color:var(--text);text-decoration:none;font-size:13px;letter-spacing:.06em;
   transition:border-color .15s ease,color .15s ease}
-.backlink:hover,.backlink:focus-visible{border-color:var(--amber);color:var(--amber)}
+.backlink:hover,.backlink:focus-visible,
+.contact:hover,.contact:focus-visible{border-color:var(--amber);color:var(--amber)}
+.contact.primary{border-color:var(--amber);color:var(--amber)}
 
 .colophon{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);
   font-size:11px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;
@@ -119,6 +136,9 @@ h1 em{font-style:normal;display:block;color:var(--amber)}
 
 @media (max-width:700px){
   .hero{padding:38px 0 26px}
+  /* .bar already wraps; give the right group its own full-width line under the mark so
+     the tagline and the button aren't squeezed against each other on a phone. */
+  .barright{width:100%;margin-left:0;justify-content:space-between}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none !important}}
 </style>
@@ -134,7 +154,14 @@ h1 em{font-style:normal;display:block;color:var(--amber)}
       </a>
       <div class="expand"><b>X</b>-Industry &middot; <b>R</b>epair &middot; <b>T</b>racking</div>
     </div>
-    <div class="tagline">Launching 2026</div>
+    <div class="barright">
+      <div class="tagline">Launching 2026</div>
+      <!-- Real navigation to the app, so no target="_blank" — this is the same product,
+           not an external reference. Reuses .contact.primary so it inherits the amber
+           border, the hover transition and the :focus-visible state already defined.
+           Markup is byte-identical to index.html's; see the .backlink/.contact alias above. -->
+      <a class="contact primary login" href="https://app.xrtsystems.com">Log in &nbsp;&rarr;</a>
+    </div>
   </div>
 
   <div class="hero">
