@@ -232,13 +232,20 @@ h1 em{font-style:normal;display:block;color:var(--amber)}
 
 <script type="module">
 /* ============================================================
-   CONFIG — swap these for production values.
-   Current values are the SANDBOX backend.
+   CONFIG — PRODUCTION backend (repointed from sandbox 2026-08-03).
+   ⚠️ BOTH VALUES ARE ENVIRONMENT-SPECIFIC AND MUST MOVE TOGETHER.
+   The guest flow gets credentials from identityPoolId, then SigV4-signs a
+   request to graphqlEndpoint. A production endpoint signed with sandbox
+   identity-pool credentials is rejected — so changing one without the other
+   breaks every submission, and it fails at request time, not at edit time.
+   Sandbox values, for reference if this is ever pointed back:
+     graphql  kclm5rietjbcfpmxykrexgl2pi.appsync-api.us-east-2.amazonaws.com
+     idpool   us-east-2:6d17a84a-e428-4d88-a5ad-7ab633b735c9
    ============================================================ */
 const CONFIG = {
-  graphqlEndpoint: "https://kclm5rietjbcfpmxykrexgl2pi.appsync-api.us-east-2.amazonaws.com/graphql",
+  graphqlEndpoint: "https://3iimlf5rhzdz3matyjd3rgu24q.appsync-api.us-east-2.amazonaws.com/graphql",
   region:          "us-east-2",
-  identityPoolId:  "us-east-2:6d17a84a-e428-4d88-a5ad-7ab633b735c9",
+  identityPoolId:  "us-east-2:a37cd530-aeba-4821-8082-3e567e32c239",
 };
 /* ========================= END CONFIG ====================== */
 
