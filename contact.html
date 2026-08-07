@@ -49,6 +49,17 @@ body{
 .expand{font-family:var(--mono);font-size:10px;letter-spacing:.18em;
   text-transform:uppercase;color:var(--muted);font-weight:400}
 .expand b{color:var(--amber);font-weight:500}
+/* The X is a real link to the app, styled to be visually identical to the plain text around it.
+   IDENTICAL to index.html's rule ON PURPOSE — these two headers are byte-identical by design and
+   the login path must not diverge between them.
+   `color:inherit` lets .expand b keep the amber; without it the UA link colour would apply.
+   `text-decoration:none` is REQUIRED — there is no global anchor reset in this file, so the UA
+   default would otherwise underline it. `cursor:inherit` suppresses the pointer.
+   ⚠️ The :focus-visible OUTLINE IS DELIBERATELY NOT SUPPRESSED. It appears only on keyboard focus,
+   never on hover or casual inspection, so it does not reveal the link to someone looking at the
+   page — but it is the one thing that keeps this reachable for keyboard users. Do not add
+   `outline:none` here. */
+.expand a{color:inherit;text-decoration:none;cursor:inherit}
 /* Right-hand header group. It owns the alignment that used to live on .tagline —
    margin-left:auto (push right) and the cross-axis position — so the tagline and the
    Log in button sit on one baseline instead of each aligning independently.
@@ -152,15 +163,10 @@ h1 em{font-style:normal;display:block;color:var(--amber)}
       <a class="marklink" href="index.html">
         <div class="mark">XRT<span>&nbsp;/&nbsp;</span>Systems</div>
       </a>
-      <div class="expand"><b>X</b>-Industry &middot; <b>R</b>epair &middot; <b>T</b>racking</div>
+      <div class="expand"><a href="https://app.xrtsystems.com"><b>X</b></a>-Industry &middot; <b>R</b>epair &middot; <b>T</b>racking</div>
     </div>
     <div class="barright">
       <div class="tagline">Launching 2026</div>
-      <!-- Real navigation to the app, so no target="_blank" — this is the same product,
-           not an external reference. Reuses .contact.primary so it inherits the amber
-           border, the hover transition and the :focus-visible state already defined.
-           Markup is byte-identical to index.html's; see the .backlink/.contact alias above. -->
-      <a class="contact primary login" href="https://app.xrtsystems.com">Log in &nbsp;&rarr;</a>
     </div>
   </div>
 
